@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CBSManagementSystem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CBSManagementSystem.styles.css" asp-append-version="true" />
+    <style>
+        /* Shared Header Background */
+        header {
+            background-color: #f8f9fa; /* Set a consistent background color */
+        }
+
+        /* Logo Section */
+        .navbar-brand {
+            font-family: 'Times New Roman', serif;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* Horizontal Line */
+        hr {
+            border: none;
+            border-top: 2px solid #ddd; /* Make the line more visible */
+            margin: 0;
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            background-color: #f8f9fa; /* Match background with the logo section */
+        }
+
+            .menu-bar .nav {
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            .menu-bar .nav-item {
+                margin: 0 15px;
+            }
+
+            .menu-bar .nav-link {
+                color: #333;
+                text-decoration: none;
+                padding: 8px 12px;
+                border-radius: 4px;
+            }
+
+                .menu-bar .nav-link:hover {
+                    color: #000;
+                    font-weight: bold;
+                    background-color: #e9ecef;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Logo Section -->
+        <div class="text-center py-3">
+            <a class="navbar-brand fw-bold text-uppercase" asp-area="" asp-controller="Home" asp-action="Index">Quervos</a>
+        </div>
+
+        <!-- Separator Line -->
+        <hr class="m-0" />
+
+        <!-- Menu Section -->
+        <nav class="menu-bar text-center py-2">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="About" asp-action="Index">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="FAQ" asp-action="Index">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Donations" asp-action="Index">Donation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Employees" asp-action="Index">Employee</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

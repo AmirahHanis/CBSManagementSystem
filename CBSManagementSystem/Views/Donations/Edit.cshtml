@@ -1,0 +1,120 @@
+﻿@model CBSManagementSystem.Models.Donation
+
+<style>
+    /* General Body Styling */
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #3b3026; /* Dark chocolate background color */
+        font-family: 'Arial', sans-serif;
+        color: #eae7dc; /* Light text color for contrast */
+    }
+
+    /* Container Styling */
+    .container {
+        max-width: 800px; /* Adjusted width for the form */
+        margin: 20px auto; /* Center container */
+        padding: 20px;
+        background-color: #fdfcf9; /* Light beige for content */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    }
+
+    /* Form Group Styling */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .control-label {
+        color: #3b3026; /* Dark brown color for labels */
+        font-weight: bold;
+    }
+
+    .form-control {
+        background-color: #fff; /* Light input background */
+        border: 1px solid #ddd; /* Subtle border */
+        color: #3b3026; /* Dark text color */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+        .form-control:focus {
+            border-color: #b29d8d; /* Light brown focus color */
+            outline: none;
+            box-shadow: 0 0 5px rgba(178, 157, 141, 0.5); /* Soft glow on focus */
+        }
+
+    /* Button Styling */
+    .btn-primary {
+        background-color: #b29d8d; /* Light brown button */
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+        .btn-primary:hover {
+            background-color: #9e8c7a; /* Slightly darker on hover */
+        }
+
+    .btn-secondary {
+        background-color: #6f5d4c; /* Muted brown for secondary button */
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a4a3c; /* Slightly darker on hover */
+        }
+
+    /* Header Styling */
+    h2 {
+        color: #3b3026; /* Dark text color for header */
+        margin-bottom: 20px;
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <h2>Edit Donation Details</h2>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="ItemID" /> <!-- Hidden field for ItemID -->
+
+        <div class="form-group">
+            <label asp-for="DonorName" class="control-label"></label>
+            <input asp-for="DonorName" class="form-control" />
+            <span asp-validation-for="DonorName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PhoneNo" class="control-label"></label>
+            <input asp-for="PhoneNo" class="form-control" />
+            <span asp-validation-for="PhoneNo" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ItemName" class="control-label"></label>
+            <input asp-for="ItemName" class="form-control" />
+            <span asp-validation-for="ItemName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ItemDescription" class="control-label"></label>
+            <input asp-for="ItemDescription" class="form-control" />
+            <span asp-validation-for="ItemDescription" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

@@ -1,0 +1,99 @@
+﻿@model CBSManagementSystem.Models.Employee
+
+<style>
+    /* General Body Styling */
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #3b3026; /* Dark chocolate background color */
+        font-family: 'Arial', sans-serif;
+        color: #eae7dc; /* Light text color for contrast */
+    }
+
+    /* Container Styling */
+    .container {
+        max-width: 800px; /* Adjusted width for the form */
+        margin: 20px auto; /* Center container */
+        padding: 20px;
+        background-color: #fdfcf9; /* Light beige for content */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    }
+
+    /* Header Styling */
+    h2, h3 {
+        color: #3b3026; /* Dark text color for header */
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Definition List Styling */
+    dl.row {
+        margin-bottom: 20px;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #3b3026; /* Dark brown color for labels */
+    }
+
+    dd {
+        color: #6f5d4c; /* Lighter brown color for descriptions */
+    }
+
+    /* Button Styling */
+    .btn-danger {
+        background-color: #dc3545; /* Red button */
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Slightly darker on hover */
+        }
+
+    .btn-secondary {
+        background-color: #6f5d4c; /* Muted brown for secondary button */
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a4a3c; /* Slightly darker on hover */
+        }
+</style>
+
+<div class="container">
+    <h2>Delete Employee Details</h2>
+    <h3>Are you sure you want to delete these details?</h3>
+
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">Employee Name</dt>
+            <dd class="col-sm-10">@Model.EmpName</dd>
+
+            <dt class="col-sm-2">Date of Birth</dt>
+            <dd class="col-sm-10">@Model.DOB.ToShortDateString()</dd>
+
+            <dt class="col-sm-2">Phone Number</dt>
+            <dd class="col-sm-10">@Model.PhoneNo</dd>
+
+            <dt class="col-sm-2">Position</dt>
+            <dd class="col-sm-10">@Model.Position</dd>
+
+            <dt class="col-sm-2">Salary</dt>
+            <dd class="col-sm-10">@Model.EmpSalary</dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="EmpID" />
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

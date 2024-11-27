@@ -1,0 +1,247 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!-- Add Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<!-- Add Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<style>
+    /* Global Page Styling */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #3b3026; /* Same dark brown background from FAQ */
+    }
+
+    /* Hero Section Styling */
+    .hero-slider {
+        width: 100%;
+        height: 50vh; /* Half the viewport height */
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slider-item {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .swiper-slide {
+        height: 50vh;
+    }
+
+    .swiper-pagination {
+        bottom: 20px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #fff;
+    }
+
+    .hero-slider .swiper-slide .container {
+        position: relative;
+        z-index: 1;
+    }
+
+        .hero-slider .swiper-slide .container .row .col-lg-8 {
+            text-align: center;
+        }
+
+    .hero-slider h1 {
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .hero-slider p {
+        color: #fff;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-slider .btn {
+        background-color: #ff6f61; /* Button color from FAQ */
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+        .hero-slider .btn:hover {
+            background-color: #e44d3a; /* Darker button hover color */
+        }
+
+    .hero-slider-wrapper {
+        max-width: 1200px; /* Limit the width of the container */
+        margin: 0 auto; /* Center the container */
+        padding: 20px; /* Add some padding around */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+        background: #fff; /* Optional: Add a white background */
+        border-radius: 8px; /* Optional: Add rounded corners */
+    }
+    /* Category Box Styling */
+    .category-box {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .category-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .category-box .content {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+    .category-box-2 {
+        border: 2px solid white;
+        background-color: #fdf5f5;
+    }
+
+        .category-box-2 .content h3 {
+            color: #ff6f61;
+            font-size: 1.8rem;
+        }
+
+        .category-box-2 .content p {
+            color: #333;
+            font-size: 1rem;
+        }
+
+    .product-category {
+        padding: 50px 0;
+        background-color: #fdfcf9; /* Light background color like FAQ */
+    }
+
+        .product-category .title h2 {
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            color: #3b3026;
+            text-align: center;
+        }
+
+        .product-category .category-box .content h3,
+        .product-category .category-box .content p {
+            font-family: 'Arial', sans-serif;
+        }
+
+    /* Container Adjustments */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+</style>
+
+<div class="container hero-slider-wrapper">
+    <div class="hero-slider swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slider-item th-fullpage hero-area" style="background-image: url(images/slider/slider-1.png);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 text-center"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slider-item th-fullpage hero-area" style="background-image: url(images/slider/slider-3.png);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 text-left"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide slider-item th-fullpage hero-area" style="background-image: url(images/slider/slider-2.png);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 text-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<!-- Swiper JS Configuration -->
+<script>
+    const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        effect: 'fade',
+    });
+</script>
+
+<section class="product-category section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title text-center">
+                    <h2>Product Category</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="category-box">
+                    <a href="#!">
+                        <img src="images/shop/category/category-1.png" alt="" />
+                        <div class="content">
+                            <h3>Clothes Sales</h3>
+                            <p>Shop New Season Clothing</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="category-box">
+                    <a href="#!">
+                        <img src="images/shop/category/category-2.png" alt="" />
+                        <div class="content">
+                            <h3>Smart Casuals</h3>
+                            <p>Get Wide Range Selection</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="category-box category-box-2">
+                    <a href="#!">
+                        <img src="images/shop/category/category-3.png" alt="" />
+                        <div class="content">
+                            <h3>Jewellery</h3>
+                            <p>Special Design Comes First</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

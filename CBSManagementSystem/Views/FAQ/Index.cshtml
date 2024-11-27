@@ -1,0 +1,165 @@
+﻿@{
+    ViewData["Title"] = "FAQ Page";
+}
+
+<style>
+    /* General Body Styling */
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #3b3026; /* Dark background color */
+        font-family: 'Arial', sans-serif;
+        color: #eae7dc; /* Light text color for contrast */
+    }
+
+    /* Container Styling */
+    .container {
+        max-width: 1200px; /* Constrain container width */
+        margin: 20px auto; /* Center container and add top/bottom spacing */
+        padding: 20px;
+        background-color: #fdfcf9; /* Light background for content */
+        border-radius: 10px; /* Rounded corners for container */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Page Banner */
+    .page-banner {
+        background-color: #fdfcf9; /* Light background for the banner */
+        padding: 30px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .page-banner .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3b3026; /* Dark text color for visibility */
+            margin-bottom: 10px;
+        }
+
+    .breadcrumb {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: inline-flex;
+        font-size: 1rem;
+        color: #6f5d4c; /* Darker color for better contrast */
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: "/";
+        margin: 0 5px;
+        color: #6f5d4c; /* Match breadcrumb text color */
+    }
+
+    .breadcrumb-item a {
+        color: #3b3026; /* Dark link color for visibility */
+        text-decoration: none;
+    }
+
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+
+    /* FAQ Section */
+    .faq-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align content to the left */
+    }
+
+        .faq-section h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b3026;
+            margin-bottom: 20px;
+        }
+
+        .faq-section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .faq-section h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3b3026;
+            margin-top: 20px;
+        }
+
+        .faq-section .faq-answer {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+    .faq-section {
+        display: flex;
+        flex-direction: row; /* Arrange items horizontally */
+        align-items: flex-start; /* Align items to the top */
+        gap: 30px; /* Add space between the two columns */
+    }
+
+        .faq-section .faq-intro {
+            flex: 1; /* Occupy one part of the space */
+            max-width: 300px; /* Optional: Limit the width for better layout */
+        }
+
+        .faq-section .faq-content {
+            flex: 2; /* Occupy the remaining space */
+        }
+</style>
+
+<body>
+    <section class="page-banner">
+        <div class="container">
+            <img class="img-responsive" src="images/FAQ.jpg" alt="About Us" style="width: 100%; border-radius: 10px;">
+            <div class="text-center">
+                <h1 class="page-title">Frequently Asked Questions</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <div class="container faq-section">
+        <div class="faq-intro">
+            <br /><br /><h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-content">
+            <h4>How do I add a new employee to the system?</h4>
+            <p class="faq-answer">Go to the Employees section and click the Add New Employee button. Fill in the required information, such as name, date of birth, phone number, position, and salary, then click Save.</p>
+
+            <h4>How can I update donation details?</h4>
+            <p class="faq-answer"> Navigate to the Donations section, find the specific donation item you want to update, and click the Edit button. Modify the item name, description, or price, then click Save to apply the changes.</p>
+
+            <h4>What should I do if I need to remove an employee or a donation item?</h4>
+            <p class="faq-answer">
+                For employees: Go to the Employees section, find the employee you want to remove, and click the Delete button.
+                <br />For donation items: Go to the Donations section, find the item you want to delete, and click the Delete button.
+            </p>
+
+            <h4>How can I view all employee or donation details?</h4>
+            <p class="faq-answer">
+                Simply go to the Employees or Donations section. The full list of employees or donations will be displayed on the page for easy viewing.
+            </p>
+
+            <h4>What should I do if the system encounters an error or data is not updating correctly?</h4>
+            <p class="faq-answer">
+                If you experience any issues, please contact our developer team at
+                <a href="mailto:devteam@Quervos.my" style="color: #007bff; text-decoration: none;">devteam@Quervos.my</a>.
+                Provide a detailed description of the issue, and we will assist you as soon as possible.
+            </p>
+        </div>
+    </div>
+
+</body>

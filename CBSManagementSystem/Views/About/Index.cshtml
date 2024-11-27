@@ -1,0 +1,208 @@
+﻿@{
+    ViewData["Title"] = "About Us Page";
+}
+
+<style>
+    /* General Body Styling */
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #3b3026; /* Dark background color */
+        font-family: 'Arial', sans-serif;
+        color: #eae7dc; /* Light text color for contrast */
+    }
+
+    /* Container Styling */
+    .container {
+        max-width: 1200px; /* Constrain container width */
+        margin: 20px auto; /* Center container and add top/bottom spacing */
+        padding: 20px;
+        background-color: #fdfcf9; /* Light background for content */
+        border-radius: 10px; /* Rounded corners for container */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Page Banner */
+    .page-banner {
+        background-color: #fdfcf9; /* Light background for the banner */
+        padding: 30px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .page-banner .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3b3026; /* Dark text color for visibility */
+            margin-bottom: 10px;
+        }
+
+    .breadcrumb {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: inline-flex;
+        font-size: 1rem;
+        color: #6f5d4c; /* Darker color for better contrast */
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        content: "/";
+        margin: 0 5px;
+        color: #6f5d4c; /* Match breadcrumb text color */
+    }
+
+    .breadcrumb-item a {
+        color: #3b3026; /* Dark link color for visibility */
+        text-decoration: none;
+    }
+
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+
+    /* Container Styling */
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff; /* Light background for content */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for container */
+    }
+
+    /* About Section */
+    .about.section {
+        padding: 50px 0;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #3b3026;
+        margin-bottom: 20px;
+    }
+
+    .about p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    /* Team Section */
+    .team-members {
+        padding: 50px 0;
+    }
+
+        .team-members .title h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b3026;
+            margin-bottom: 20px;
+        }
+
+    .team-member {
+        text-align: center;
+    }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            margin-bottom: 15px;
+        }
+
+        .team-member h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #3b3026;
+        }
+
+        .team-member p {
+            color: #666;
+        }
+</style>
+
+<body>
+    <section class="page-banner">
+        <div class="container">
+            <img class="img-responsive" src="images/About.jpg" alt="About Us" style="width: 100%; border-radius: 10px;">
+            <div class="text-center">
+                <h1 class="page-title">About Us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="about section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image on the Left -->
+                <div class="col-md-6">
+                    <img class="img-responsive" src="images/about/about.jpg" alt="About Us" style="width: 100%; border-radius: 10px;">
+                </div>
+
+                <!-- Text on the Right -->
+                <div class="col-md-6">
+                    <h2>About Our Shop</h2>
+                    <p>
+                        At Quervos Streetwear™, we connect buyers with curated thrifted streetwear while empowering sellers through our commission-based model. Sellers set their prices, and we handle the rest, ensuring a seamless shopping experience.
+                    </p>
+                    <p>
+                        Discover unique, affordable pieces and join us in redefining secondhand fashion with Quervos Streetwear™!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-members">
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2>Team Members</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="team-member">
+                        <img class="img-circle" src="images/team/luqman.jpg" alt="Luqman Hakim">
+                        <h4>Luqman Hakim</h4>
+                        <p>Founder</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team-member">
+                        <img class="img-circle" src="images/team/amirah.jpg" alt="Amirah Hanis">
+                        <h4>Amirah Hanis</h4>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team-member">
+                        <img class="img-circle" src="images/team/hajar.jpg" alt="Hajar Mardhiah">
+                        <h4>Hajar Mardhiah</h4>
+                        <p>Trend Analyst</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team-member">
+                        <img class="img-circle" src="images/team/aidiel.jpg" alt="Aidiel Rozamal">
+                        <h4>Aidiel Rozamal</h4>
+                        <p>Shop Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
